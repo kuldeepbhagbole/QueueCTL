@@ -7,7 +7,7 @@ QueueCTL is a production-grade, CLI-based background job queue system built with
 [Demo Video](https://drive.google.com/file/d/1TMEJUrbfWvB4mV6wRq9TRtSnergAYGB1/view?usp=sharing)
 
 ## Author
-Kuldeep Bhagoble
+Kuldeep Bhagbole
 
 ---
 
