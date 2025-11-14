@@ -65,57 +65,44 @@ Kuldeep Bhagbole
 Add a job to the queue using a JSON string.
 *(Note: For Windows CMD, you must escape double quotes inside the JSON string as shown below).*
 
-# Windows CMD format:
+**Windows CMD format:**
 queuectl enqueue "{\"command\": \"echo Hello World\", \"id\": \"job-1\"}"
 
-# Linux/Mac/PowerShell format:
+**Linux/Mac/PowerShell format:**
 queuectl enqueue '{"command": "echo Hello World", "id": "job-1"}'
 
-# Start a single worker:
+**Start a single worker:**
 queuectl worker start --count 1
 
-# Start multiple workers (e.g., 3) in parallel:
+**Start multiple workers (e.g., 3) in parallel:**
 queuectl worker start --count 3
 
-# Stop all workers gracefully (finishes current job first):
+**Stop all workers gracefully (finishes current job first):**
 queuectl worker stop
 
-# Show System Status Dashboard (Summary):
+**Show System Status Dashboard (Summary):**
 queuectl status
 
-# List all jobs (regardless of state):
+**List all jobs (regardless of state):**
 queuectl list
 
-# List jobs filtered by state (pending, processing, completed, failed, dead):
+**List jobs filtered by state (pending, processing, completed, failed, dead):**
 queuectl list --state pending
 
-# List all permanently failed jobs in DLQ:
+**List all permanently failed jobs in DLQ:**
 queuectl dlq list
 
-# Retry a specific job from DLQ (moves back to pending):
+**Retry a specific job from DLQ (moves back to pending):**
 queuectl dlq retry job-1
 
-# View current configuration settings:
+**View current configuration settings:**
 queuectl config get
 
-# Set maximum retries allowed (Default is 3):
+**Set maximum retries allowed (Default is 3):**
 queuectl config set max_retries 5
 
-# Set exponential backoff base (Default is 2):
+**Set exponential backoff base (Default is 2):**
 queuectl config set backoff_base 3
-
----
-
-📊 System Health
-┌───────────────┬──────────┐
-│ State         │ Count    │
-├───────────────┼──────────┤
-│ Pending ⏳    │ 0        │
-│ Processing ⚙️  │ 1        │
-│ Completed ✅  │ 5        │
-│ Failed ⚠️     │ 0        │
-│ Dead (DLQ) 💀 │ 1        │
-└───────────────┴──────────┘
 
 ---
 
@@ -168,7 +155,7 @@ node tests/1_enqueue_list.js
 ```
 
 ## Foler Structure
-
+```
 queuectl/
 ├── bin/
 │   └── index.js            # Main Entry Point (CLI command registration)
@@ -197,3 +184,4 @@ queuectl/
 ├── README.md               # Project Documentation
 └── queue.db                # (Auto-generated) The SQLite Database file
 
+```
